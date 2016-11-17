@@ -53,7 +53,7 @@ class GeneticAlgorithmSearch:
             self.__verbose('Starting generation {}'.format(i))
             
             # Evaluate
-            self._current_population.sort(key=self._evaluate_chromosome)
+            self._current_population.sort(key=self._evaluate_chromosome, reverse=self.reverse_sort)
             self._best_so_far = self._current_population[-1]
             self.__verbose('\tBest score so far = {}'.format(self._evaluate_chromosome(self._best_so_far)))
 
